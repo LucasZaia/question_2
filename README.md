@@ -26,20 +26,29 @@ OPENAI_MODEL=gpt-5-mini
 OPENAI_TEMPERATURE=0
 ```
 
-## Executar
+## Scripts
 
-Para iniciar o agente usando o shell script:
+O projeto possui o script `scripts/run_agent.sh`, que automatiza a execução do agente a partir da raiz do projeto. Antes de iniciar, ele verifica se o arquivo `.env` existe.
+
+Execute:
 
 ```bash
 ./scripts/run_agent.sh
 ```
 
-O script executa o agente a partir da raiz do projeto e valida se o arquivo `.env` existe.
-Também é possível executar diretamente com `uv`:
+Se o `.env` não existir, crie-o com base no exemplo:
+
+```bash
+cp .env.example .env
+```
+
+Para executar sem o script:
 
 ```bash
 uv run python -m agent_app.main
 ```
+
+O script não recebe parâmetros. A entrada é feita de forma interativa no terminal; use `sair`, `exit` ou `quit` para encerrar.
 
 Ao iniciar, o programa gera automaticamente um identificador para a conversa e exibe algumas sugestões:
 
